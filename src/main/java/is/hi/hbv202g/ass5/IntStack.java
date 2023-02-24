@@ -1,4 +1,5 @@
 package is.hi.hbv202g.ass5;
+import is.hi.hbv202g.ass5.IntStack;
 
 /**
  * A very simple stack for storing the basic type int.
@@ -52,7 +53,13 @@ public class IntStack {
         }
     }
 
-    // TODO: Add isEmpty() method
+    /**
+     * Returns whether the stack is empty.
+     * @return true if the stack is empty, false if the stack is not empty
+     */
+    public boolean isEmpty() {
+        return nextPushLocation == 0;
+    }
 
     /**
      * Push on int on the stack.
@@ -60,8 +67,12 @@ public class IntStack {
      * @throws ArrayIndexOutOfBoundsException If the stack was already full
      */
     public void push(int element) throws ArrayIndexOutOfBoundsException {
+        if (isFull()) {
+            throw new ArrayIndexOutOfBoundsException("Stack is full");
+        }
         theStack[nextPushLocation++] = element;
     }
+
 
     /**
      * Pops an int from the stack
