@@ -32,10 +32,10 @@ public class IntStackTest {
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void testPushOnFullStack() {
         IntStack myStack = new IntStack();
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 11; i++) {
             myStack.push(i);
         }
-        myStack.push(6);
+        //myStack.push();
     }
 
     @Test
